@@ -3,6 +3,11 @@ package mediatheque;
 
 
 public class Book extends Item {
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
 	private String author;
 
 	public Book(String author, String title) {
@@ -16,10 +21,6 @@ public class Book extends Item {
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}	
-
-	public void print() {
-		System.out.println(this);
 	}
 
 	@Override

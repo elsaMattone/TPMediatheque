@@ -1,6 +1,11 @@
 package mediatheque;
 
 public class CD extends Item {
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
 	private int numberOfTracks;
 
 	public CD(int numberOfTracks, String title) {
@@ -14,10 +19,6 @@ public class CD extends Item {
 
 	public void setNumberOfTracks(int numberOfTracks) {
 		this.numberOfTracks = numberOfTracks;
-	}
-
-	public void print() {
-		System.out.println(this);
 	}
 
 	@Override
